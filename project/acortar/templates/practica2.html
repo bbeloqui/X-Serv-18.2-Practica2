@@ -1,0 +1,50 @@
+
+<html>
+<head>
+<style type="text/css">
+#contenedor {
+}
+#cabecera { color: #000080;
+font-size:20px;
+text-align: center;
+text-decoration: underline;
+}
+#menu {
+float: left;
+width: 30%;
+}
+#contenido {
+float: right;
+width: 60%;
+}
+#pie {
+clear: both;
+font-size:14px;
+text-align: center
+}
+</style>
+</head>
+
+<body bgcolor="Lavender">
+    <div id="contenedor">
+        <div id="cabecera">
+            <h1>ACORTADOR DE URL</h1>
+        </div>
+        <div id="menu">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <br>Introduce la url:<br> <input type="text" name="nombre">
+                <br><input type="submit" value="Enviar">
+            </form>
+            <br><a href="http://localhost:8000/admin/"><button>Admin</button></a>
+        </div>
+        <div id="contenido">
+            {{ context.contenido | safe }}
+            {{ context.contenido1 | safe }}
+        </div>
+        <div id="pie">
+            <br><br><br>Practica 2 realizada por Borja Beloqui Jiménez, Sistemas
+        </div>
+    </div>
+</body>
+</html>
